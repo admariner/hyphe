@@ -300,8 +300,9 @@ angular.module('hyphe.manageTagsController', [])
         ),
         $scope.filters, $scope.tagCategories
       ).sort(function(a, b) {
-        if (a.name < b.name) return -1;
-        else if (a.name > b.name) return 1;
+        var a_low = a.name.toLowerCase(), b_low = b.name.toLowerCase();
+        if (a_low < b_low) return -1;
+        else if (a_low > b_low) return 1;
         return 0;
       })
       $scope.displayedEntities.forEach(function(we){
