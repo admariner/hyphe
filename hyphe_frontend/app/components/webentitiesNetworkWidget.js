@@ -773,11 +773,11 @@ angular.module('hyphe.webentitiesNetworkWidgetComponent', [])
             for (tagCat in $scope.tagCategories) {
               var tagVal = ''
               try {
-                tagVal = g.getNodeAttribute(nid, 'tags').USER[tagCat]
+                tagVal = g.getNodeAttribute(nid, 'tags').USER[tagCat][0]
               } catch(e) {
                 tagVal = ''
               }
-              g.setNodeAttribute(nid, "tag_" + tagCat.trim(), tagVal);
+              g.setNodeAttribute(nid, "tag_" + tagCat.trim(), tagVal)
             }
             // g.removeNodeAttribute(nid, "tags");
           })
